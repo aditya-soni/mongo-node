@@ -28,7 +28,18 @@ MongoClient.connect(url,(err,client)=>{
     //     err=> console.log(err)
     // );
 
-    db.collection('Users').remove({name : 'Aditya'});
+    // db.collection('Users').deleteMany({name:'Aditya'}).then(result=>{
+    //     console.log(result.result)
+    // });
+    // db.collection('Users').deleteOne({
+    //     _id : new ObjectID('5a92aaeda1c5f97214d3b21c')
+    // }).then(result=>{
+    //     console.log(result.result)
+    // });
+
+    db.collection('Users').findOneAndDelete({name:'Rick'}).then(result=>{
+        console.log(result)
+    });
 
     client.close();
 })
