@@ -38,7 +38,7 @@ MongoClient.connect(url,(err,client)=>{
     // });
 
     db.collection('Users').findOneAndDelete({name:'Rick'}).then(result=>{
-        console.log(result)
+        console.log(result.result)
     });
 
     client.close();
